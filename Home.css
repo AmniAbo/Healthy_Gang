@@ -1,0 +1,114 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  
+  /* Define the beat animation to use in my css files */
+  @keyframes beat {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Body style */
+  
+  #container{
+      background-image: url('Images/doctor.jpg'); /* Check the image path */
+      background-size: cover;
+    
+  }
+  
+  
+  /* Header style */
+  header {
+    background-color: #20B2AA; /* LightSeaGreen */
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 1.875rem; /* 30px */
+  }
+  
+  nav ul {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #19f8cc; /* LightSeaGreen variant */
+    text-decoration: underline;
+  }
+  
+  /* Main Content */
+  main {
+    flex-grow: 1;
+    padding: 2rem;
+  }
+  
+  main .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  section {
+    margin-bottom: 3rem;
+  }
+  
+  section h2 {
+    font-size: 2.5rem; /* 40px */
+    color: #333;
+  }
+  
+  section p {
+    font-size: 1.125rem; /* 18px */
+    color: #666;
+  }
+  
+  a.bg-blue-600 {
+    background-color: #20B2AA; /* LightSeaGreen */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem; /* 6px */
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  #join_now {
+    background-color: #20B2AA;
+    animation: beat 2s infinite;
+    display: inline-block;
+    margin-top: 20px;
+  }
+  
+  #footer {
+    background-color: #20B2AA;
+  }
+  

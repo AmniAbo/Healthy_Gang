@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BeHealthyVideo from './Videos/Be_Healthy.mp4'; // Adjust the path as necessary
 
 const Features = () => {
   return (
@@ -22,18 +21,10 @@ const Features = () => {
       {/* Main Content */}
       <main id="container" className="flex-grow flex items-center justify-center py-12 bg-teal-50">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl mx-auto text-center">
-          {/* Video Player */}
-          <div className="w-full" style={{ aspectRatio: '16/9' }}>
-  <video
-    className="w-full h-full rounded-lg"
-    controls
-    autoPlay
-    src={BeHealthyVideo}
-    title="Video Overview"
-  >
-    Your browser does not support the video tag.
-  </video>
-</div>
+          <h2 className="text-3xl font-bold mb-4">Welcome to Be Healthy</h2>
+          <p className="text-gray-700 mb-4">
+            Discover the best practices for maintaining a healthy lifestyle. Stay informed with our latest updates and tips on health and wellness.
+          </p>
         </div>
       </main>
 

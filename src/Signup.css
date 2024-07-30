@@ -1,0 +1,25 @@
+ /* Body style */
+ #container{
+    background-image: url('Images/doctor.jpg'); /* Check the image path */
+    background-size: cover;
+  
+  }
+  header {
+    background-color: #20B2AA; /* LightSeaGreen */
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #19f8cc; /* LightSeaGreen variant */
+    text-decoration: underline;
+  }
+  
+  

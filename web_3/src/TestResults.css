@@ -1,0 +1,29 @@
+.parameters {
+    margin-top: 1rem;
+  }
+  
+  .parameter {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding: 0.5rem 0;
+  }
+  
+  .parameter:first-child {
+    border-top: none;
+  }
+  
+  .range {
+    color: #888;
+    font-size: 0.875rem;
+  }
+  
+  .parameter > p {
+    flex: 1;
+    margin: 0;
+  }
+  
+  .parameter > p:not(:last-child) {
+    margin-right: 1rem;
+  }
+  

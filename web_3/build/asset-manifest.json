@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4a64eac1.css",
+    "main.js": "/static/js/main.8073fbdf.js",
+    "static/js/239.5e3d7ce9.chunk.js": "/static/js/239.5e3d7ce9.chunk.js",
+    "static/js/213.22837776.chunk.js": "/static/js/213.22837776.chunk.js",
+    "static/js/455.e960d2d3.chunk.js": "/static/js/455.e960d2d3.chunk.js",
+    "static/media/Be_Healthy.mp4": "/static/media/Be_Healthy.eae9995cbf9fc9c834af.mp4",
+    "static/media/doctor-dark.jpg": "/static/media/doctor-dark.4101378a9d61103ef32d.jpg",
+    "static/media/running.jpg": "/static/media/running.e87df92c900b7bdbcc04.jpg",
+    "static/media/tennis.jpg": "/static/media/tennis.db660c33851e8aae5e72.jpg",
+    "static/media/doctor.jpg": "/static/media/doctor.2cfc0e3c97c41178f8a7.jpg",
+    "static/media/basketball.jpg": "/static/media/basketball.7c9fbb87ee4cd38a83bb.jpg",
+    "static/media/hiking.jpg": "/static/media/hiking.28d8317c064e6fcc3002.jpg",
+    "static/media/weightlifting.jpg": "/static/media/weightlifting.6a3bc95fed24c49ee22c.jpg",
+    "static/media/sports.jpg": "/static/media/sports.51b7e9b219758d70cf0e.jpg",
+    "static/media/chicken_salad.jpg": "/static/media/chicken_salad.08075a6060c1256987bb.jpg",
+    "static/media/sweet-potato-black-bean-tacos.jpg": "/static/media/sweet-potato-black-bean-tacos.b2305bf30bd6436a0637.jpg",
+    "static/media/black-bean-quinoa-salad.jpg": "/static/media/black-bean-quinoa-salad.8a48df6a0ce171a2f7dc.jpg",
+    "static/media/cycling.jpg": "/static/media/cycling.c60f2c752df0d195b7c7.jpg",
+    "static/media/Stir-Fry-Vegetables.jpg": "/static/media/Stir-Fry-Vegetables.25895aa1983ec8705692.jpg",
+    "static/media/soccer.jpg": "/static/media/soccer.3c6399067bdec3f3b8f1.jpg",
+    "static/media/swimming.jpg": "/static/media/swimming.382f98a4f20b2dfbefc3.jpg",
+    "static/media/oven-baked-salmon.jpg": "/static/media/oven-baked-salmon.1aba6e7b618577c3f434.jpg",
+    "static/media/Stuffed-Bell-Peppers-close.jpg": "/static/media/Stuffed-Bell-Peppers-close.51dcd93be4ed678e8137.jpg",
+    "static/media/Chia-Pudding.jpg": "/static/media/Chia-Pudding.dace392fc54369677a2e.jpg",
+    "static/media/yoga.jpg": "/static/media/yoga.7de715c5510d7385b952.jpg",
+    "static/media/Greek-Yogurt-Parfait-Recipe.jpg": "/static/media/Greek-Yogurt-Parfait-Recipe.7470a3f98aba5b81ecde.jpg",
+    "static/media/pilates.jpg": "/static/media/pilates.69d2c616650c8e82307e.jpg",
+    "static/media/berry_smoothie.jpg": "/static/media/berry_smoothie.8b9bfc1bf70290a51403.jpg",
+    "static/media/avocado_toast.jpg": "/static/media/avocado_toast.863a657293940eb8f1d8.jpg",
+    "index.html": "/index.html",
+    "main.4a64eac1.css.map": "/static/css/main.4a64eac1.css.map",
+    "main.8073fbdf.js.map": "/static/js/main.8073fbdf.js.map",
+    "239.5e3d7ce9.chunk.js.map": "/static/js/239.5e3d7ce9.chunk.js.map",
+    "213.22837776.chunk.js.map": "/static/js/213.22837776.chunk.js.map",
+    "455.e960d2d3.chunk.js.map": "/static/js/455.e960d2d3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4a64eac1.css",
+    "static/js/main.8073fbdf.js"
+  ]
+}

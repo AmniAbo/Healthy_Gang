@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth, database } from './Firebase'; // Ensure Firebase is initialized and exported
-import { ref, push, get, query, orderByChild, equalTo } from 'firebase/database';
-import { useNavigate } from 'react-router-dom';
+import { ref, push, get } from 'firebase/database';
 
 const MakeAppointment = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +12,9 @@ const MakeAppointment = () => {
     medicalCenter: '',
   });
   const [error, setError] = useState('');
+  const [isDarkMode] = useState(() => {
+    return JSON.parse(localStorage.getItem('darkMode')) || false;
+  });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -93,19 +95,27 @@ const MakeAppointment = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col">
+    <div className={`min-h-screen flex flex-col ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
       {/* Header */}
-      <header className="shadow-md py-4">
+      <header className={`shadow-md py-4 ${isDarkMode ? 'bg-gray-800' : 'bg-teal-500'}`}>
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-2xl font-bold">Be Healthy</h1>
           <nav>
             <ul className="flex space-x-4">
-              <li><Link to="/lobby" className="text-white-700 hover:text-teal-500">Lobby</Link></li>
+              <li>
+                <Link to="/lobby" className={`hover:text-teal-500 ${isDarkMode ? 'text-gray-300' : 'text-gray-100'}`}>
+                  Lobby
+                </Link>
+              </li>
               <li>
                 {auth.currentUser ? (
-                  <button onClick={handleLogout} className="text-white-700 hover:text-teal-500">Logout</button>
+                  <button onClick={handleLogout} className={`hover:text-teal-500 ${isDarkMode ? 'text-gray-300' : 'text-gray-100'}`}>
+                    Logout
+                  </button>
                 ) : (
-                  <Link to="/login" className="text-white-700 hover:text-teal-500">Login</Link>
+                  <Link to="/login" className={`hover:text-teal-500 ${isDarkMode ? 'text-gray-300' : 'text-gray-100'}`}>
+                    Login
+                  </Link>
                 )}
               </li>
             </ul>
@@ -114,19 +124,19 @@ const MakeAppointment = () => {
       </header>
 
       {/* Main Content */}
-      <div id="container" className="flex-grow flex items-center justify-center">
-        <div className="bg-white p-8 rounded shadow-md w-full max-w-md mx-auto">
+      <div id="container" className="flex-grow flex items-center justify-center py-8 px-4">
+        <div className={`bg-white p-8 rounded shadow-md w-full max-w-md mx-auto ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white'}`}>
           <h2 className="text-2xl font-bold mb-6 text-center text-teal-500">Make an Appointment</h2>
           {error && <p className="text-red-500 mb-4">{error}</p>}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2" htmlFor="doctor">Select Doctor</label>
+              <label className="block mb-2" htmlFor="doctor">Select Doctor</label>
               <select
                 id="doctor"
                 name="doctor"
                 value={formData.doctor}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded"
+                className={`w-full p-2 border rounded ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300 bg-gray-100'}`}
                 required
               >
                 <option value="">Choose a doctor</option>
@@ -137,13 +147,13 @@ const MakeAppointment = () => {
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2" htmlFor="appointmentType">Appointment Type</label>
+              <label className="block mb-2" htmlFor="appointmentType">Appointment Type</label>
               <select
                 id="appointmentType"
                 name="appointmentType"
                 value={formData.appointmentType}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded"
+                className={`w-full p-2 border rounded ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300 bg-gray-100'}`}
                 required
               >
                 <option value="">Select an appointment type</option>
@@ -165,13 +175,13 @@ const MakeAppointment = () => {
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2" htmlFor="medicalCenter">Medical Center</label>
+              <label className="block mb-2" htmlFor="medicalCenter">Medical Center</label>
               <select
                 id="medicalCenter"
                 name="medicalCenter"
                 value={formData.medicalCenter}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded"
+                className={`w-full p-2 border rounded ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300 bg-gray-100'}`}
                 required
               >
                 <option value="">Select a medical center</option>
@@ -182,31 +192,31 @@ const MakeAppointment = () => {
               </select>
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2" htmlFor="date">Date</label>
+              <label className="block mb-2" htmlFor="date">Date</label>
               <input
                 type="date"
                 id="date"
                 name="date"
                 value={formData.date}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded"
+                className={`w-full p-2 border rounded ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300 bg-gray-100'}`}
                 required
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2" htmlFor="reason">Reason for Appointment</label>
+              <label className="block mb-2" htmlFor="reason">Reason for Appointment</label>
               <textarea
                 id="reason"
                 name="reason"
                 value={formData.reason}
                 onChange={handleChange}
-                className="w-full p-2 border border-gray-300 rounded"
+                className={`w-full p-2 border rounded ${isDarkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-300 bg-gray-100'}`}
                 required
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full bg-teal-500 text-white p-2 rounded hover:bg-teal-600"
+              className={`w-full p-2 rounded ${isDarkMode ? 'bg-teal-400 hover:bg-teal-300' : 'bg-teal-500 hover:bg-teal-600'} text-white`}
             >
               Make Appointment
             </button>
@@ -215,7 +225,7 @@ const MakeAppointment = () => {
       </div>
 
       {/* Footer */}
-      <footer id="footer" className="bg-blue-600 text-white p-4 text-center">
+      <footer id="footer" className={`p-4 text-center ${isDarkMode ? 'bg-gray-800 text-gray-200' : 'bg-blue-600 text-white'}`}>
         <p>&copy; 2024 Be Healthy. All rights reserved.</p>
       </footer>
     </div>

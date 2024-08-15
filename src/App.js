@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { DarkModeProvider } from './DarkModeContext'; // Import the provider
 import Login from './Login.js';
 import Home from './Home.js';
 import Signup from './Signup.js';
@@ -14,10 +15,13 @@ import HealthyRecipes from './HealthyRecipes.js';
 import HealthySports from './Sports.js';
 import SetGoals from './SetGoals.js';
 import TestResults from './TestResults.js';
+import Tips from './Tips.js';
+
 
 function App() {
   return (
-    <Router>
+    <DarkModeProvider>
+      <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -33,8 +37,11 @@ function App() {
         <Route path="/healthysports" element={<HealthySports />} />
         <Route path="/setgoals" element={<SetGoals />} />
         <Route path="/testresults" element={<TestResults />} />
+        <Route path="/tips" element={<Tips />} />
       </Routes>
     </Router>
+    </DarkModeProvider>
+    
   );
 }
 
